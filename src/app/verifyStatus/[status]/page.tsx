@@ -12,9 +12,11 @@ const VerificationStatus = () => {
       </div>
     );
   } else {
-    <div className="w-screen h-screen flex justify-center items-center text-xl text-red-400">
-      Email Already Verified
-    </div>;
+    return (
+      <div className="w-screen h-screen flex justify-center items-center text-xl text-red-400">
+        Email Already Verified
+      </div>
+    );
   }
 };
 
