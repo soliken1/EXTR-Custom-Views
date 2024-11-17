@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 
-const page = () => {
+const VerificationStatus = () => {
   const { status } = useParams();
 
   if (status === "success") {
@@ -18,4 +18,4 @@ const page = () => {
   }
 };
 
-export default page;
+export default VerificationStatus;
