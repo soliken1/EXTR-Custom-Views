@@ -10,6 +10,8 @@ const ResetPasswordPage = () => {
   const [error, setError] = useState("");
 
   const resetRoute = `https://extr-fri730-704ba95d817c.herokuapp.com/api/password/reset/${token}`;
+  const decodedEmail =
+    typeof email === "string" ? decodeURIComponent(email) : "";
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ const ResetPasswordPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email,
+          decodedEmail,
           password,
           password_confirmation: passwordConfirmation,
         }),
@@ -66,7 +68,7 @@ const ResetPasswordPage = () => {
             type="email"
             id="email"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
-            value={email}
+            value={decodedEmail}
             required
             disabled
           />
