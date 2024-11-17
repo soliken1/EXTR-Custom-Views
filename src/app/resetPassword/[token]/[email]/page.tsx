@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { useParams } from "next/navigation";
 
 const ResetPasswordPage = () => {
-  const { token } = useParams();
-  const [email, setEmail] = useState("");
+  const { token, email } = useParams();
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [message, setMessage] = useState("");
@@ -68,8 +67,8 @@ const ResetPasswordPage = () => {
             id="email"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
             required
+            disabled
           />
         </div>
 
