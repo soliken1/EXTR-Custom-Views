@@ -33,15 +33,15 @@ const ResetPasswordPage = () => {
 
       if (response.ok) {
         setMessage(
-          data.message || "Password reset successfully! You may close this page"
+          data.message || "Password reset successfully! You May Close This Page"
         );
         setError("");
       } else {
-        setError(data.message || "Something went wrong.");
+        setError(data.message || "Something Went Wrong, Please Try Again");
         setMessage("");
       }
     } catch {
-      setError("An error occurred. Please try again.");
+      setError("Please and Try To Submit Again");
       setMessage("");
     }
   };
@@ -88,6 +88,7 @@ const ResetPasswordPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            min={6}
           />
         </div>
 
@@ -105,6 +106,7 @@ const ResetPasswordPage = () => {
             value={passwordConfirmation}
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             required
+            min={6}
           />
         </div>
 
