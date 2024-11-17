@@ -39,7 +39,7 @@ const ResetPasswordPage = () => {
         setError(data.message || "Something went wrong.");
         setMessage("");
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.");
       setMessage("");
     }
