@@ -10,7 +10,7 @@ const ResetPasswordPage = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const resetRoute = `https://extr-fri730-704ba95d817c.herokuapp.com/api/resetPassword/${token}`;
+  const resetRoute = `https://extr-fri730-704ba95d817c.herokuapp.com/api/password/reset/${token}`;
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
