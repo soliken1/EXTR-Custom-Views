@@ -23,7 +23,7 @@ const ResetPasswordPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          decodedEmail,
+          email: decodedEmail,
           password,
           password_confirmation: passwordConfirmation,
         }),
