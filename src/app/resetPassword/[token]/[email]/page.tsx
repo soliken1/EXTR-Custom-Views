@@ -16,6 +16,18 @@ const ResetPasswordPage = () => {
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
+    if (password !== passwordConfirmation) {
+      setError("Passwords do not match");
+      setMessage("");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      setMessage("");
+      return;
+    }
+
     try {
       const response = await fetch(resetRoute, {
         method: "POST",
